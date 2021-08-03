@@ -61,24 +61,11 @@
             text-shadow: 0 0 1px rgba(0, 0, 0, .5);
             z-index: 1;
         }
-
-        p {
-            font-size: 20px;
-            text-shadow: 0 1px 0 #0f0f0f;
-            margin-top: 0;
-        }
-
-        .tag {
-            font-size: 0.8em;
-            opacity: 0.67;
-            z-index: 2;
-        }
     </style>
     <foreignObject width="100%" height="100%">
-        <div xmlns="http://www.w3.org/1999/xhtml" class="bg container">
-            <h1 class="bg fg">Tach</h1>
+        <div xmlns="http://www.w3.org/1999/xhtml" class="container">
+            <h1 class="bg fg">great stuff</h1>
             <h2>Random Kotlin Goodies</h2>
-            <p><span class="tag">#</span>exec <span class="tag">#</span>sh <span class="tag">#</span>bash <span class="tag">#</span>docker</p>
         </div>
     </foreignObject>
 </svg>
