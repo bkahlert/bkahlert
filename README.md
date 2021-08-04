@@ -1,1 +1,1 @@
-![Made in Berlin](made-in-berlin.svg)
+![Kaomoji Hero](kaomoji-hero.svg)
