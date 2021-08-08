@@ -61,7 +61,6 @@
             margin-top: -1em;
             color: transparent;
             font-size: 1em;
-            text-shadow: 0 0 .5px rgba(0, 0, 0, .5);
             z-index: 1;
         }
     </style>
