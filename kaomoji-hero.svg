@@ -21,7 +21,6 @@
 
         .fg {
             color: transparent;
-            text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
             -webkit-background-clip: text;
             -moz-background-clip: text;
             background-clip: text;
@@ -48,8 +47,7 @@
         }
 
         h1 {
-            margin: 0 !important;
-            border: none !important;
+            margin: 0;
             font-size: 90px;
             line-height: 1.3;
         }
