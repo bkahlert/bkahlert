@@ -48,7 +48,8 @@
         }
 
         h1 {
-            margin: 0;
+            margin: 0 !important;
+            border: none !important;
             font-size: 90px;
             line-height: 1.3;
         }
@@ -56,7 +57,9 @@
         h2 {
             position: relative;
             height: 0;
+            top: -.8em;
             left: 13.5em;
+            margin-top: -1em;
             color: transparent;
             font-size: 1em;
             text-shadow: 0 0 .5px rgba(0, 0, 0, .5);
