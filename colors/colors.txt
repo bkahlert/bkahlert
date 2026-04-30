@@ -1,0 +1,20 @@
+Primary:
+  blue
+  cmyk(100%, 0%, 0%, 0%)
+  rgb(0, 174, 239)
+
+Secondary:
+  violet
+  cmyk(35%, 100%, 35$, 10%)
+  rgb(158, 31, 99)
+
+Tertiary:
+  Orange
+  cmyk(9%, 82%, 96%, 1%)
+  rgb(218, 83, 44)
+  #da532c
+
+  yellow
+  cmyk(8%, 18%, 100%, 0%)
+  rgba(239, 201, 2)
+  #efc902
