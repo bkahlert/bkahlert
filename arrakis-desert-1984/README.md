@@ -53,7 +53,7 @@ Unavailable WebGL, shader failures, or texture failures reveal the local still S
 
 ## SVG differences
 
-The SVG embeds five responsive landscapes exported from this approved renderer.
+The SVG embeds five responsive landscapes exported from the renderer.
 It contains 208 independently moving dust clouds using the current sprite and palette.
 Near particles span the full view and cross in front of the moons.
 Six depth masks approximate the renderer's per-pixel terrain occlusion.
@@ -82,7 +82,7 @@ npm run serve
 
 The server uses port 4185; `PORT` overrides it.
 [Build scripts](scripts) generate the WebGL copy, component bundle, and SVG assets.
-[The manifest](provenance/build-manifest.json) records input and output SHA-256 hashes.
+[The manifest](build-manifest.json) records input and output SHA-256 hashes.
 `check:generated` checks freshness without rebuilding.
 Committed generated duplication keeps every runtime folder independently copyable.
 
@@ -90,12 +90,9 @@ Package-owned tests compile real shaders in Chromium and WebKit.
 They cover responsive moons and dunes, negative visual controls, visible storm motion,
 independent copies, nested URLs, component lifecycle, fallback, context loss,
 focus easing, visibility, reduced motion, and disposal during texture loading.
-The original historical references are not validation fixtures for this recolored artwork.
 
-## Texture provenance
+## Credits
 
 [Asset credits](src/assets/CREDITS.txt) identify the Solar System Scope moon texture,
 licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-[The texture manifest](provenance/texture-manifest.json) records its source URL,
-conversion recipe, output size, and digest.
 Terrain, dust, composition, and crimson recoloring are original procedural artwork.

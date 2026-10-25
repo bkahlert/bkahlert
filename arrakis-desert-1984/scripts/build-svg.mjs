@@ -174,4 +174,4 @@ const files = ['src/scene.js', 'src/scene.css', 'src/component.js', 'src/assets/
   'webcomponent/arrakis-desert-1984-still.svg', 'svg/arrakis-desert-1984.svg', 'svg/arrakis-desert-1984-still.svg'];
 const sha256 = {};
 for (const file of files) sha256[file] = createHash('sha256').update(await readFile(new URL(file, directory))).digest('hex');
-await writeFile(new URL('provenance/build-manifest.json', directory), JSON.stringify({ sha256 }, null, 2) + '\n');
+await writeFile(new URL('build-manifest.json', directory), JSON.stringify({ sha256 }, null, 2) + '\n');

@@ -97,12 +97,11 @@ Canonical code and assets live in [src](src); edit those files and rebuild.
 [Build scripts](scripts) copy the WebGL files and assets, bundle the component,
 and generate self-contained SVGs plus local fallback copies.
 Renderer files and assets inside the variants are generated from these shared sources.
-[Provenance](provenance) contains texture metadata, reference captures, and build hashes.
 
 The [component](src/component.js) and [renderer](src/scene.js) are bundled with esbuild.
 The [SVG generator](scripts/build-svg.mjs) calls the shared renderer directly in Chromium.
 It embeds the scene, depth masks, and original dust sprite into the SVG outputs.
-The [build manifest](provenance/build-manifest.json) records source and output hashes;
+The [build manifest](build-manifest.json) records source and output hashes;
 `npm run check:generated` rejects stale generated files before a rebuild. Rebuild after editing artwork or styles.
 Rendering can vary slightly between GPU drivers, so generated JPEG bytes may vary.
 
@@ -117,11 +116,8 @@ component isolation, nested URL embedding, and the side-by-side comparison.
 Screenshots and logs belong in the ignored [test-results](test-results) directory.
 
 Browser automation does not replace physical-device testing.
-The copied [references](provenance/references) are historical upstream captures;
-[their provenance](provenance/references/provenance.json) describes their original environment,
-not validation of this extraction. Hosted CI results depend on running the repository workflow.
 
-## Provenance and licensing
+## Credits
 
 The artwork and original lifecycle tests were copied from the CHOAM Arrakis study.
 Their local adaptation has no runtime, generator, or test dependency on that repository.
@@ -129,8 +125,8 @@ The renderer preserves its terrain, moon shaders, and storm composition.
 The GoodBytes Arrakis demo inspired the composition; its code, audio, and images are not included.
 
 The lunar texture is from Solar System Scope under CC BY 4.0.
-See [asset credits](src/assets/CREDITS.txt), [texture manifest](provenance/texture-manifest.json),
-and [the optional texture preparation recipe](scripts/prepare_texture.py).
+See [asset credits](src/assets/CREDITS.txt) and
+[the optional texture preparation recipe](scripts/prepare_texture.py).
 The recipe uses its own inline-pinned Pillow dependency and a locally downloaded original;
 normal builds use the included texture without Python or network access.
 The recipe writes its result to [src/assets/moon.jpg](src/assets/moon.jpg).

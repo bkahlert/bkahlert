@@ -11,12 +11,6 @@ test('all three entry pages contain only a background', () => {
   }
 });
 
-test('keeps only the comparison, README, and package configuration at the root', () => {
-  const files = fs.readdirSync(path.join(__dirname, '..'), { withFileTypes: true })
-    .filter(entry => entry.isFile() && entry.name !== '.DS_Store').map(entry => entry.name).sort();
-  assert.deepEqual(files, ['.gitignore', 'README.md', 'index.html', 'package-lock.json', 'package.json']);
-});
-
 test('renderer exposes a reusable mount without source rewriting', () => {
   const renderer = fs.readFileSync(path.join(__dirname, '../src/scene.js'), 'utf8');
   const generator = fs.readFileSync(path.join(__dirname, '../scripts/build-svg.mjs'), 'utf8');
@@ -36,17 +30,23 @@ test('generated SVG embeds artwork without scripts or external resources', () =>
   }
 });
 
-test('build manifest proves artifacts match the checked-in source and texture', () => {
+test('build manifest detects stale sources and generated artifacts', () => {
   const { createHash } = require('node:crypto');
-  const filename = path.join(__dirname, '../provenance/build-manifest.json');
+  const filename = path.join(__dirname, '../build-manifest.json');
   assert.ok(fs.existsSync(filename), 'build manifest exists');
   const manifest = JSON.parse(fs.readFileSync(filename, 'utf8'));
   for (const [file, digest] of Object.entries(manifest.sha256)) {
     const actual = createHash('sha256').update(fs.readFileSync(path.join(__dirname, '..', file))).digest('hex');
     assert.equal(actual, digest, `${file} requires npm run build`);
   }
-  const texture = JSON.parse(fs.readFileSync(path.join(__dirname, '../provenance/texture-manifest.json'), 'utf8'));
-  const actual = createHash('sha256').update(fs.readFileSync(path.join(__dirname, '..', texture.output.file))).digest('hex');
-  assert.equal(actual, texture.output.sha256);
-  assert.equal(fs.statSync(path.join(__dirname, '..', texture.output.file)).size, texture.output.size_bytes);
+});
+
+test('copies the texture and credits into both live distributions', () => {
+  for (const file of ['moon.jpg', 'CREDITS.txt']) {
+    const canonical = fs.readFileSync(path.join(__dirname, '../src/assets', file));
+    for (const variant of ['webgl', 'webcomponent']) {
+      const copied = fs.readFileSync(path.join(__dirname, '..', variant, 'assets', file));
+      assert.deepEqual(copied, canonical);
+    }
+  }
 });

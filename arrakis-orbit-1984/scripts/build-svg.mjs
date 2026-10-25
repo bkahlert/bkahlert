@@ -5,7 +5,7 @@ import { build } from 'esbuild';
 import { chromium } from 'playwright';
 import sharp from 'sharp';
 
-/** Generates self-contained SVG layers directly from the approved fragment shader at scene time zero. */
+/** Generates self-contained SVG layers directly from the fragment shader at scene time zero. */
 export async function buildSvg(rootDirectory) {
   const source = await readFile(path.join(rootDirectory, 'src/renderer.js'), 'utf8');
   const credits = await readFile(path.join(rootDirectory, 'src/assets/CREDITS.txt'), 'utf8');
@@ -17,7 +17,7 @@ export async function buildSvg(rootDirectory) {
       const main = sphere ? sphereMain(layer) : skyMain(layer);
       const start = source.indexOf('      void main() {\n        float aspect');
       const end = source.indexOf('\n    `', start);
-      if (start < 0 || end < 0) throw new Error('Approved fragment main was not found');
+      if (start < 0 || end < 0) throw new Error('Fragment main was not found');
       const replacement = source.slice(0, start) + main + source.slice(end);
       const prepared = replacement.replace('alpha: false,', 'alpha: true, premultipliedAlpha: false,')
         .replace('const budget = width < 700 ? 1100000 : 2200000', 'const budget = Infinity');

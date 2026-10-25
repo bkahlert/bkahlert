@@ -60,8 +60,9 @@ Each variant folder is a complete runtime distribution. Copy `webgl`,
 Direct `file:` loading does not support browser modules reliably.
 
 The full project is only needed for editing and rebuilding. Canonical renderer,
-styles, and [artwork](src/assets/CREDITS.txt) live in `src`; generators and the
-server live in `scripts`; hashes and historical references live in `provenance`.
+styles, and [artwork](src/assets/CREDITS.txt) live in [src](src); generators and the
+server live in [scripts](scripts). The [build manifest](build-manifest.json)
+records build inputs and outputs for freshness checks.
 Builds copy required assets into each live variant and bundle its styles and fallback.
 
 ## Embed
@@ -106,13 +107,11 @@ query. Keep that query when embedding the animated CSS background.
 
 ## Attribution and tests
 
-The renderer and browser suite were extracted from the `choam.de` orbital study
-on 2026-10-25. [Asset credits](src/assets/CREDITS.txt) retain licenses and attribution.
-The [texture manifest](provenance/texture-manifest.json) records source and output hashes.
-The [texture utility](scripts/prepare_textures.py) recreates the JPEG maps with Pillow from
-verified original downloads; normal builds use the checked-in maps without network
-or Python dependencies. [Reference provenance](provenance/references/provenance.json) records
-the historical screenshots.
+[Asset credits](src/assets/CREDITS.txt) retain licenses, source URLs, and adaptation details.
+The [texture utility](scripts/prepare_textures.py) recreates the JPEG maps with Pillow
+from local `mars.jpg`, `clouds.jpg`, and `moon.jpg` source maps. Pass `--source-dir`
+and a new `--output-dir`; add `--download` to fetch missing sources. Normal builds
+use the checked-in maps without network or Python dependencies.
 
 Tests cover the three real variant pages in Chromium and WebKit at four viewport
 sizes, the side-by-side comparison, and actual pixel evidence for every landmark.

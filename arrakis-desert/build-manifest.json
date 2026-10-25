@@ -6,7 +6,7 @@
     "src/assets/moon.jpg": "32168f63ebfd888f166e395b069b73468d7c6c235c8ac009b40a01474483612e",
     "src/assets/CREDITS.txt": "11234953132e69f3c1eee09af2196f3eaaccc8cf0053a336bdd4a19307a8e27a",
     "scripts/build.mjs": "22cae78490a79436abf0265a27ef6bd5b49d17f10f43209eff491b26e103ce5d",
-    "scripts/build-svg.mjs": "a5b21025fd7a2c0ee560c07decef4a5f0cfbd4ec599265ba26bebab21f5711bf",
+    "scripts/build-svg.mjs": "62be245b03376605e6d920425c357e3909be197eb98c7ccc91c46db96a7a8caa",
     "package.json": "7fd9d77d0f08fb294a1e564894b90d7d4202543b06c08aed07ee447ac2dd9931",
     "package-lock.json": "69ca84032d5c8d7212083095769b792ea79a20ee11aa1b706bbf606e0e7f51ed",
     "webgl/scene.js": "55e1efb637523131d5b98126258fdea89483f75f99fbc87bb4f36a826c330d46",

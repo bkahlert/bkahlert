@@ -32,5 +32,4 @@ const manifest = Object.fromEntries(await Promise.all(inputsAndOutputs.map(async
   const bytes = await readFile(root + file)
   return [file, createHash('sha256').update(bytes).digest('hex')]
 })))
-await mkdir(root + 'provenance', { recursive: true })
-await writeFile(root + 'provenance/build-manifest.json', JSON.stringify(manifest, null, 2) + '\n')
+await writeFile(root + 'build-manifest.json', JSON.stringify(manifest, null, 2) + '\n')

@@ -10,7 +10,6 @@ License: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
 Source catalogue: https://www.solarsystemscope.com/textures/
 Modified: grayscale, LANCZOS resize to 4096x2048, progressive JPEG quality93.
 The two fictional moons use different orientations of this Earth-Moon map.
-The conversion recipe and hashes are recorded in provenance/texture-manifest.json.
 
 1984 prototype: original cyan moon lighting, procedural crimson/violet cloud
 composition, and dark dune shading. Inspired by the user-supplied Dune 1984

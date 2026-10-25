@@ -5,7 +5,7 @@
   "src/component.js": "f1eb31f6dc771d78bb579542b76c35bc891bafeda779cb119f330cc8006d9935",
   "src/renderer.js": "e4d5ff4e39c1ba91f499413c401f64129655a79c4ada91ddfe3a3ad7d6618267",
   "src/scene.css": "db19147477715d112216ceb74a9988281685004daf54fef36db331239d99cf0c",
-  "scripts/build.mjs": "24d2da22411ee0fca31ca0e407adfb546354e57aa41eb9d94ee830952f421fd0",
+  "scripts/build.mjs": "6ed2db51720ad14fd8ca524743be0ed4b235830e53796a34c1040c499cdd5969",
   "scripts/build-svg.mjs": "39ac6ec0e512d15bf0b691d6a95b465d9a8d08f952725304645b66667b6190cb",
   "src/assets/arrakis.jpg": "d5019ffc393eae391e50357e48834f54847489e465a60618b3c44c91a1aba7fe",
   "src/assets/caladan-clouds.jpg": "79f6fdb6ad5488dba4ca192bb0d424f5e46747b45408da51edb9a99ba8e4e108",

@@ -158,4 +158,4 @@ const sha256 = {};
 for (const file of files) {
   sha256[file] = createHash('sha256').update(await readFile(new URL(file, directory))).digest('hex');
 }
-await writeFile(new URL('provenance/build-manifest.json', directory), JSON.stringify({ sha256 }, null, 2) + '\n');
+await writeFile(new URL('build-manifest.json', directory), JSON.stringify({ sha256 }, null, 2) + '\n');

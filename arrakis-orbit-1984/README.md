@@ -1,7 +1,7 @@
 # Arrakis Orbit (1984)
 
 Crimson twilight behind cyan textured moons and an eclipsed Arrakis at lower left.
-The approved WebGL artwork is preserved, including slow rotation and cloud time.
+The WebGL scene includes slow rotation and moving clouds.
 
 [![Arrakis Orbit (1984)](svg/arrakis-orbit-1984.svg)](svg/arrakis-orbit-1984.svg)
 
@@ -58,7 +58,7 @@ npm run serve
 ```
 
 Canonical code, styles, and textures live in [src](src). The
-[build manifest](provenance/build-manifest.json) records build inputs and outputs.
+[build manifest](build-manifest.json) records build inputs and outputs.
 Builds are local and offline after dependency/browser installation. SVG raster
 pixels can vary with Chromium and graphics drivers; freshness checks use recorded
 hashes and do not rerender artwork.
@@ -105,7 +105,7 @@ Resizing still works while paused. WebGL context restoration recreates resources
 Missing textures or unavailable WebGL show the local CSS fallback.
 
 The SVG generator renders separate clouds, stars, and sphere layers from the actual
-approved fragment shader at time zero. It embeds every image as a data URI. Cyan
+fragment shader at time zero. It embeds every image as a data URI. Cyan
 moons, the crimson plume, and lower-left eclipse retain their responsive placement.
 Sphere exports use supersampling and transparent edge coverage. Stars receive
 modest brightness compensation for raster downsampling.
@@ -121,17 +121,11 @@ under the host's reduced-motion query. Keep that CSS query when embedding as a
 background image; SVG image documents do not consistently inherit host preferences.
 The animated SVG contains CSS animation and no JavaScript or external requests.
 
-## Provenance and verification
-
-The [approved desktop reference](provenance/references/approved-desktop.jpg) records
-the accepted local prototype. Its [provenance](provenance/references/provenance.json)
-records its hash. Tests characterize the complete approved fragment shader.
+## Attribution and tests
 
 Planet maps came from existing repository assets. [Credits](src/assets/CREDITS.txt)
-retain Solar System Scope / INOVE attribution and CC BY 4.0 licensing. The
-[texture manifest](provenance/texture-manifest.json) retains inherited original
-source hashes and verifies local adapted-file hashes. Original downloads were not
-re-fetched for this package. This is artistic Dune-inspired artwork, not an
+retain Solar System Scope / INOVE attribution, source URLs, adaptation details,
+and CC BY 4.0 licensing. This is artistic Dune-inspired artwork, not an
 astronomical map or an official licensed adaptation.
 
 Package-owned tests exercise Chromium and WebKit, actual shader compilation,
