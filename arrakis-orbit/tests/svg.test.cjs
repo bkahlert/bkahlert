@@ -25,7 +25,10 @@ describe('SVG export', () => {
     for (const landmark of ['arrakis', 'caladan', 'moon', 'stars']) {
       assert.ok(svg.includes(`id="${landmark}"`), landmark);
     }
-    assert.match(svg, /prefers-reduced-motion/);
+    assert.doesNotMatch(svg, /prefers-reduced-motion/);
+    const page = await fs.readFile(path.join(root, 'svg/index.html'), 'utf8');
+    assert.match(page, /prefers-reduced-motion/);
+    assert.ok(page.includes('arrakis-orbit-still.svg'));
     assert.match(svg, /@keyframes/);
     assert.match(svg, /data:image\/png;base64,/);
     assert.doesNotMatch(svg, /(?:href|src)="(?:https?:|\/|\.\.)/);

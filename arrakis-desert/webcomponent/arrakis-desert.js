@@ -165,7 +165,9 @@ function mountDesert(root, { assetBase = new URL("./assets/", import.meta.url).h
         antialias: false,
         depth: false,
         stencil: false,
-        powerPreference: "low-power"
+        powerPreference: "low-power",
+        // Paused scenes must retain the last frame after compositing.
+        preserveDrawingBuffer: true
       });
       if (!gl) {
         loading = false;

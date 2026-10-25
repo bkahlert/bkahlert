@@ -85,7 +85,8 @@ It contains no scripts or external resource references.
 CSS keyframes approximate the live storm with 208 clouds; gust timing and depth occlusion differ.
 The terrain and moons are rasterized, so extreme enlargement can reveal fixed-resolution detail.
 The [still SVG](svg/arrakis-still.svg) contains no animation declarations.
-Use it explicitly under reduced motion for consistent CSS-image behavior across browsers.
+The animated SVG does not apply reduced-motion preferences internally.
+Its host must select the still SVG using the media query above; [svg/index.html](svg/index.html) already does this.
 
 ## Sources and verification
 

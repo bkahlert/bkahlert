@@ -35,8 +35,7 @@ ${motion ? `#arrakis-motion { animation:orbit-drift 37s ease-in-out infinite alt
 #caladan-motion { animation:orbit-drift 43s ease-in-out infinite alternate-reverse; }
 #stars { animation:starlight 7s ease-in-out infinite alternate; }
 @keyframes orbit-drift { from { transform:translate(-2px,0); } to { transform:translate(3px,2px); } }
-@keyframes starlight { from { opacity:.65; } to { opacity:1; } }
-@media (prefers-reduced-motion:reduce) { #arrakis-motion,#caladan-motion,#stars { animation:none; } }` : ''}
+@keyframes starlight { from { opacity:.65; } to { opacity:1; } }` : ''}
 </style>
 <defs>
 <radialGradient id="nebula">

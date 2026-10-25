@@ -93,7 +93,8 @@ Drift and star twinkle approximate motion; sphere rotation, moving clouds, shade
 atmosphere halos, procedural nebulae, and focus easing remain specific to WebGL.
 The SVG starfield is sparser. Eclipse is the only SVG composition.
 
-CSS SVG images do not consistently receive the browser's reduced-motion preference.
+The [animated SVG](svg/arrakis-orbit.svg) always animates. CSS SVG images do not
+consistently receive the host page's reduced-motion preference.
 The [SVG page](svg/index.html) therefore switches to
 [still SVG](svg/arrakis-orbit-still.svg) through a host-page media
 query. Keep that query when embedding the animated CSS background.

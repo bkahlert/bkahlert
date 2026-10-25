@@ -168,6 +168,8 @@ export function mountOrbit(container, {
     updateState()
     try {
       const gl = canvas.getContext('webgl', {
+        // Paused and reduced-motion scenes retain their last frame between paints.
+        preserveDrawingBuffer: true,
         alpha: false,
         antialias: false,
         depth: false,

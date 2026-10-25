@@ -10,7 +10,6 @@ License: https://creativecommons.org/licenses/by/4.0/. Original terrain and dust
 @media(min-aspect-ratio:6/5){.frame-1{display:none}.frame-2{display:inline}}
 @media(min-aspect-ratio:9/5){.frame-2{display:none}.frame-3{display:inline}}
 @media(min-aspect-ratio:12/5){.frame-3{display:none}.frame-4{display:inline}}
-@media(prefers-reduced-motion:reduce){.cloud{animation-play-state:paused!important}}
 
 </style>
 <defs>

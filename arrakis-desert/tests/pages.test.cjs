@@ -259,6 +259,39 @@ for (const [engineName, engine] of Object.entries({ chromium, webkit })) {
       await page.close();
     });
 
+    for (const variant of ['webgl', 'webcomponent']) {
+      it(`retains the ${variant} static framebuffer after browser compositing`, async () => {
+        const page = await browser.newPage({ viewport: { width: 480, height: 320 }, reducedMotion: 'reduce' });
+        try {
+          await page.goto(`${url}/${variant}/index.html`);
+          await ready(page, `${variant}/index.html`);
+          await page.screenshot();
+          const coloredFraction = await page.locator('canvas').evaluate(canvas => {
+            const gl = canvas.getContext('webgl');
+            const pixels = new Uint8Array(canvas.width * canvas.height * 4);
+            gl.readPixels(0, 0, canvas.width, canvas.height, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
+            let colored = 0;
+            for (let i = 0; i < pixels.length; i += 4) {
+              if (pixels[i] + pixels[i + 1] + pixels[i + 2] > 60) colored++;
+            }
+            return colored / (canvas.width * canvas.height);
+          });
+          assert.ok(coloredFraction > 0.95, `retained artwork fraction ${coloredFraction}`);
+        } finally { await page.close(); }
+      });
+    }
+
+    it('keeps the animated SVG asset moving independently of host media preferences', async () => {
+      const page = await browser.newPage({ viewport: { width: 640, height: 400 }, reducedMotion: 'reduce' });
+      try {
+        await page.goto(`${url}/svg/arrakis.svg`);
+        const initial = PNG.sync.read(await page.screenshot());
+        await page.waitForTimeout(700);
+        const moving = PNG.sync.read(await page.screenshot());
+        assert.ok(changedFraction(initial, moving, 0.8) > 0.03, 'the animated asset retains its foreground motion');
+      } finally { await page.close(); }
+    });
+
     it('animates SVG sand in the foreground and holds reduced motion still', async () => {
       const page = await browser.newPage({ viewport: { width: 640, height: 400 } });
       await page.goto(`${url}/svg/index.html`);

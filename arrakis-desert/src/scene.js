@@ -164,6 +164,8 @@ export function mountDesert(root, { assetBase = new URL('./assets/', import.meta
     try {
       const gl = canvas.getContext('webgl', {
         alpha: false, antialias: false, depth: false, stencil: false, powerPreference: 'low-power',
+        // Paused scenes must retain the last frame after compositing.
+        preserveDrawingBuffer: true,
       });
       if (!gl) {
         loading = false;

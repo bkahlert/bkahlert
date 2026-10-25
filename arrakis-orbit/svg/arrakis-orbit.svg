@@ -32,7 +32,6 @@ Generated from the local texture artwork. Sphere lighting is baked; CSS animates
 #stars { animation:starlight 7s ease-in-out infinite alternate; }
 @keyframes orbit-drift { from { transform:translate(-2px,0); } to { transform:translate(3px,2px); } }
 @keyframes starlight { from { opacity:.65; } to { opacity:1; } }
-@media (prefers-reduced-motion:reduce) { #arrakis-motion,#caladan-motion,#stars { animation:none; } }
 </style>
 <defs>
 <radialGradient id="nebula">
