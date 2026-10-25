@@ -166,7 +166,7 @@ for (const [name, engine] of Object.entries({ chromium, webkit })) {
       assert.equal(ready, 0);
       assert.equal(await page.locator('.choam-universe__still').isVisible(), true);
     assert.match(await page.locator('.choam-universe__still').evaluate(element =>
-      getComputedStyle(element).backgroundImage), /arrakis-still\.svg/);
+      getComputedStyle(element).backgroundImage), /arrakis-desert-still\.svg/);
       assert.equal(await page.locator('#choam-universe').evaluate(element =>
         element.classList.contains('choam-universe--loading')), false);
       assert.equal(await page.evaluate(() => fixture.pending.size), 0);
@@ -182,7 +182,7 @@ for (const [name, engine] of Object.entries({ chromium, webkit })) {
       assert.equal(await page.locator('canvas').evaluate(canvas => getComputedStyle(canvas).opacity), '0');
       assert.equal(await page.locator('.choam-universe__still').isVisible(), true);
     assert.match(await page.locator('.choam-universe__still').evaluate(element =>
-      getComputedStyle(element).backgroundImage), /arrakis-still\.svg/);
+      getComputedStyle(element).backgroundImage), /arrakis-desert-still\.svg/);
       assert.equal(await page.locator('#choam-universe').evaluate(element =>
         element.classList.contains('choam-universe--loading')), false);
       assert.equal(await page.evaluate(() => fixture.pending.size), 0);
@@ -211,7 +211,7 @@ for (const [name, engine] of Object.entries({ chromium, webkit })) {
       assert.equal(await page.locator('canvas').evaluate(canvas => getComputedStyle(canvas).opacity), '0');
       assert.equal(await page.locator('.choam-universe__still').isVisible(), true);
       assert.match(await page.locator('.choam-universe__still').evaluate(element =>
-        getComputedStyle(element).backgroundImage), /arrakis-still\.svg/);
+        getComputedStyle(element).backgroundImage), /arrakis-desert-still\.svg/);
       assert.equal(await page.locator('#choam-universe').evaluate(element =>
         element.classList.contains('choam-universe--loading')), false);
       assert.equal(await page.evaluate(() => fixture.pending.size), 0);
@@ -593,7 +593,7 @@ for (const [name, engine] of Object.entries({ chromium, webkit })) {
       assert.equal(await page.locator('canvas').evaluate(canvas => getComputedStyle(canvas).opacity), '0');
       assert.equal(await page.locator('.choam-universe__still').isVisible(), true);
       assert.match(await page.locator('.choam-universe__still').evaluate(element =>
-        getComputedStyle(element).backgroundImage), /arrakis-still\.svg/);
+        getComputedStyle(element).backgroundImage), /arrakis-desert-still\.svg/);
       await page.evaluate(async () => {
         const canvas = document.querySelector('canvas');
         window.restoreFallbackVisibility = [];
@@ -653,7 +653,7 @@ for (const [name, engine] of Object.entries({ chromium, webkit })) {
       assert.equal(await page.locator('#choam-universe').count(), 1);
       assert.equal(await page.locator('.choam-universe__still').isVisible(), true);
       assert.match(await page.locator('.choam-universe__still').evaluate(element =>
-        getComputedStyle(element).backgroundImage), /arrakis-still\.svg/);
+        getComputedStyle(element).backgroundImage), /arrakis-desert-still\.svg/);
       assert.equal(await page.evaluate(() => fixture.pending.size), 0);
       const screenshot = PNG.sync.read(await page.screenshot());
       const colors = new Set();

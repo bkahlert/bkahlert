@@ -53,14 +53,14 @@ Unavailable WebGL, shader failures, or texture failures reveal the local still S
 
 ## SVG differences
 
-The SVG embeds five responsive landscapes exported from the renderer.
-It contains 208 independently moving dust clouds using the current sprite and palette.
+The SVG embeds seven responsive compositions exported from the renderer, including square and 1.2:1 scenes for near-square viewports.
+It contains 48 independently moving dust clouds using the current sprite and palette.
 Near particles span the full view and cross in front of the moons.
-Six depth masks approximate the renderer's per-pixel terrain occlusion.
+Two depth masks approximate the renderer's per-pixel terrain occlusion.
 The far and near layers retain their different projection, altitude, and opacity.
 
-SVG uses sampled, repeating particle paths and layer altitude gradients.
-It approximates gust timing and depth transitions between six masks.
+SVG uses 24 sampled motion intervals per repeating particle path and layer altitude gradients.
+It approximates gust timing and depth transitions between two masks.
 The broad volumetric gust is baked into the exported landscape at scene time zero.
 SVG therefore approximates motion rather than reproducing every WebGL frame.
 The page selects the still asset for reduced motion.

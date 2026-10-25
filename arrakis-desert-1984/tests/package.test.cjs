@@ -23,11 +23,21 @@ test('generated SVG embeds artwork without scripts or external resources', () =>
     const svg = fs.readFileSync(path.join(__dirname, '..', file), 'utf8');
     assert.doesNotMatch(svg, /<script|<foreignObject|onload=|href="(?:https?:|\/)/u);
     const references = [...svg.matchAll(/href="(?<reference>[^"]+)"/gu)].map(match => match.groups.reference);
-    assert.ok(references.length > 200);
+    assert.equal(references.filter(reference => reference === '#dust').length, file.includes('still') ? 48 : 96);
     assert.ok(references.every(reference => reference.startsWith('data:image/') || reference.startsWith('#')));
     assert.match(svg, /Solar System Scope/u);
     if (file.includes('still')) assert.doesNotMatch(svg, /@keyframes|animation:/u);
   }
+});
+
+test('generated SVG selects square and above-square compositions near 1:1', () => {
+  const svg = fs.readFileSync(path.join(__dirname, '../svg/arrakis-desert-1984.svg'), 'utf8');
+  const frames = [...svg.matchAll(/<svg class="frame frame-(\d+)"[^>]*viewBox="0 0 ([\d.]+) 1000"/gu)];
+  assert.deepEqual(frames.map(([, index, width]) => [Number(index), Number((Number(width) / 1000).toFixed(4))]), [
+    [0, 0.5625], [1, 0.75], [2, 1], [3, 1.2], [4, 1.6], [5, 2.1], [6, 3.2],
+  ]);
+  assert.match(svg, /@media\(min-aspect-ratio:1\/1\)\{\.frame-2\{display:none\}\.frame-3\{display:inline\}\}/u);
+  assert.match(svg, /@media\(min-aspect-ratio:6\/5\)\{\.frame-3\{display:none\}\.frame-4\{display:inline\}\}/u);
 });
 
 test('build manifest detects stale sources and generated artifacts', () => {

@@ -10,7 +10,9 @@ const browser = await chromium.launch();
 let sprite;
 const compositions = [
   { width: 900, height: 1600 }, { width: 900, height: 1200 },
-  { width: 1920, height: 1200 }, { width: 2100, height: 1000 }, { width: 2400, height: 750 },
+  { width: 1200, height: 1200 }, { width: 1440, height: 1200 },
+  { width: 1920, height: 1200 },
+  { width: 2100, height: 1000 }, { width: 2400, height: 750 },
 ];
 try {
   const page = await browser.newPage({ viewport: { width: 1600, height: 1000 }, reducedMotion: 'reduce' });
@@ -60,13 +62,16 @@ const smoothstep = (low, high, value) => {
   return t * t * (3 - 2 * t);
 };
 const fixed = value => Number(value.toFixed(3));
-const depths = [0.5, 2, 5, 12, 28, 42];
+const depths = [0.5, 42];
+const farCloudCount = 32;
+const nearCloudCount = 16;
+const sampleCount = 24;
 const styles = [];
 const clouds = depths.map(() => [[], []]);
 const stills = depths.map(() => [[], []]);
-for (let i = 0; i < 208; i++) {
-  const near = i >= 144;
-  const phase = ((near ? i - 144 : i) + random(i, 3) * 0.8) / (near ? 64 : 144);
+for (let i = 0; i < farCloudCount + nearCloudCount; i++) {
+  const near = i >= farCloudCount;
+  const phase = ((near ? i - farCloudCount : i) + random(i, 3) * 0.8) / (near ? nearCloudCount : farCloudCount);
   const variation = (phase * 17.31) % 1;
   const speed = (2 + variation * 3) * (near ? 0.35 : 1);
   const span = near ? 5.85 : 42;
@@ -76,8 +81,8 @@ for (let i = 0; i < 208; i++) {
   const y = (random(i, 2) - 0.5) * (near ? 2.4 : 20);
   const size = near ? 0.6 + random(i, 4) * 0.8 : 3 + random(i, 4) * 3.5;
   const states = depths.map(() => []);
-  for (let frame = 0; frame <= 80; frame++) {
-    const progress = frame / 80;
+  for (let frame = 0; frame <= sampleCount; frame++) {
+    const progress = frame / sampleCount;
     const elapsed = progress * duration;
     const travel = progress + 0.055 * Math.sin(progress * Math.PI * 2);
     const depth = nearest + span * (1 - travel);
@@ -99,7 +104,7 @@ for (let i = 0; i < 208; i++) {
         + `scale(${fixed(scaleX)},${fixed(scaleY)}) rotate(${fixed(angle)}deg);`
         + `opacity:${fixed(maskDepth === nearestMask ? opacity : 0)}`;
       states[index].push(`${fixed(progress * 100)}%{${state}}`);
-      if (frame === Math.round((1 - phase) * 80) && maskDepth === nearestMask) {
+      if (frame === Math.round((1 - phase) * sampleCount) && maskDepth === nearestMask) {
         stills[index][near ? 1 : 0].push(`<g style="${state}"><use href="#dust"/></g>`);
       }
     }
@@ -122,9 +127,11 @@ License: https://creativecommons.org/licenses/by/4.0/. Original terrain and dust
 <style>
 .frame{display:none}.frame-0{display:inline}
 @media(min-aspect-ratio:3/4){.frame-0{display:none}.frame-1{display:inline}}
-@media(min-aspect-ratio:6/5){.frame-1{display:none}.frame-2{display:inline}}
-@media(min-aspect-ratio:9/5){.frame-2{display:none}.frame-3{display:inline}}
-@media(min-aspect-ratio:12/5){.frame-3{display:none}.frame-4{display:inline}}
+@media(min-aspect-ratio:7/8){.frame-1{display:none}.frame-2{display:inline}}
+@media(min-aspect-ratio:1/1){.frame-2{display:none}.frame-3{display:inline}}
+@media(min-aspect-ratio:6/5){.frame-3{display:none}.frame-4{display:inline}}
+@media(min-aspect-ratio:9/5){.frame-4{display:none}.frame-5{display:inline}}
+@media(min-aspect-ratio:12/5){.frame-5{display:none}.frame-6{display:inline}}
 ${animated ? styles.join('\n') : ''}
 </style>
 <defs>
@@ -162,7 +169,7 @@ ${[0, 1].map(near => `<g mask="url(#altitude-${index}-${near})">${depths.map((_,
 const svg = composeSvg(true);
 await writeFile(new URL('svg/arrakis-desert-1984.svg', directory), svg);
 await writeFile(new URL('svg/arrakis-desert-1984-still.svg', directory), composeSvg(false));
-console.log(`Created arrakis-desert-1984.svg: ${(Buffer.byteLength(svg) / 1024 / 1024).toFixed(2)} MiB; 208 dust clouds; six depth masks; five compositions.`);
+console.log(`Created arrakis-desert-1984.svg: ${(Buffer.byteLength(svg) / 1024 / 1024).toFixed(2)} MiB; ${farCloudCount + nearCloudCount} dust clouds; ${depths.length} depth masks; ${sampleCount} motion intervals; ${compositions.length} compositions.`);
 for (const variant of ['webgl', 'webcomponent']) {
   await copyFile(new URL('svg/arrakis-desert-1984-still.svg', directory), new URL(`${variant}/arrakis-desert-1984-still.svg`, directory));
 }

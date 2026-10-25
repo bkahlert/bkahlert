@@ -10,7 +10,9 @@ const browser = await chromium.launch();
 let sprite;
 const compositions = [
   { width: 900, height: 1600 }, { width: 900, height: 1200 },
-  { width: 1920, height: 1200 }, { width: 2100, height: 1000 }, { width: 2400, height: 750 },
+  { width: 1200, height: 1200 }, { width: 1440, height: 1200 },
+  { width: 1920, height: 1200 },
+  { width: 2100, height: 1000 }, { width: 2400, height: 750 },
 ];
 try {
   const page = await browser.newPage({ viewport: { width: 1600, height: 1000 }, reducedMotion: 'reduce' });
@@ -60,12 +62,15 @@ const smoothstep = (low, high, value) => {
   return t * t * (3 - 2 * t);
 };
 const fixed = value => Number(value.toFixed(3));
+const farCloudCount = 32;
+const nearCloudCount = 16;
+const sampleCount = 24;
 const styles = [];
 const clouds = [[], []];
 const stills = [[], []];
-for (let i = 0; i < 208; i++) {
-  const near = i >= 144;
-  const phase = ((near ? i - 144 : i) + random(i, 3) * 0.8) / (near ? 64 : 144);
+for (let i = 0; i < farCloudCount + nearCloudCount; i++) {
+  const near = i >= farCloudCount;
+  const phase = ((near ? i - farCloudCount : i) + random(i, 3) * 0.8) / (near ? nearCloudCount : farCloudCount);
   const variation = (phase * 17.31) % 1;
   const speed = (5 + variation * 6) * (near ? 0.35 : 1);
   const span = near ? 5.85 : 42;
@@ -76,8 +81,8 @@ for (let i = 0; i < 208; i++) {
   const size = near ? 0.6 + random(i, 4) * 0.8 : 3 + random(i, 4) * 3.5;
   const keys = [];
   let stillState;
-  for (let frame = 0; frame <= 80; frame++) {
-    const progress = frame / 80;
+  for (let frame = 0; frame <= sampleCount; frame++) {
+    const progress = frame / sampleCount;
     const elapsed = progress * duration;
     const travel = progress + 0.055 * Math.sin(progress * Math.PI * 2);
     const depth = nearest + span * (1 - travel);
@@ -93,7 +98,7 @@ for (let i = 0; i < 208; i++) {
     const state = `transform:translate(${fixed(cx)}px,${fixed(cy)}px) `
       + `rotate(${fixed(angle)}deg) scale(${fixed(scale)});opacity:${fixed(opacity)}`;
     keys.push(`${fixed(progress * 100)}%{${state}}`);
-    if (frame === Math.round((1 - phase) * 80)) stillState = state;
+    if (frame === Math.round((1 - phase) * sampleCount)) stillState = state;
   }
   styles.push(`@keyframes cloud${i}{${keys.join('')}}`);
   const animation = `cloud${i} ${fixed(duration)}s linear -${fixed((1 - phase) * duration)}s infinite`;
@@ -112,9 +117,11 @@ License: https://creativecommons.org/licenses/by/4.0/. Original terrain and dust
 <style>
 .frame{display:none}.frame-0{display:inline}
 @media(min-aspect-ratio:3/4){.frame-0{display:none}.frame-1{display:inline}}
-@media(min-aspect-ratio:6/5){.frame-1{display:none}.frame-2{display:inline}}
-@media(min-aspect-ratio:9/5){.frame-2{display:none}.frame-3{display:inline}}
-@media(min-aspect-ratio:12/5){.frame-3{display:none}.frame-4{display:inline}}
+@media(min-aspect-ratio:7/8){.frame-1{display:none}.frame-2{display:inline}}
+@media(min-aspect-ratio:1/1){.frame-2{display:none}.frame-3{display:inline}}
+@media(min-aspect-ratio:6/5){.frame-3{display:none}.frame-4{display:inline}}
+@media(min-aspect-ratio:9/5){.frame-4{display:none}.frame-5{display:inline}}
+@media(min-aspect-ratio:12/5){.frame-5{display:none}.frame-6{display:inline}}
 ${animated ? styles.join('\n') : ''}
 </style>
 <defs>
@@ -143,7 +150,7 @@ const svg = composeSvg(true);
 await writeFile(new URL('svg/arrakis-desert.svg', directory), svg);
 await writeFile(new URL('svg/arrakis-desert-still.svg', directory), composeSvg(false));
 const sizeMiB = (Buffer.byteLength(svg) / 1024 / 1024).toFixed(2);
-console.log(`Created arrakis-desert.svg: ${sizeMiB} MiB; 208 dust clouds; five responsive compositions.`);
+console.log(`Created arrakis-desert.svg: ${sizeMiB} MiB; ${farCloudCount + nearCloudCount} dust clouds; ${clouds.length} storm layers; ${sampleCount} motion intervals; ${compositions.length} responsive compositions.`);
 
 for (const variant of ['webgl', 'webcomponent']) {
   await copyFile(new URL('svg/arrakis-desert-still.svg', directory), new URL(`${variant}/arrakis-desert-still.svg`, directory));

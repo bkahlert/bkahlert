@@ -83,9 +83,10 @@ From a stylesheet at the project root:
 
 Give the element a width and height. The [SVG variant](svg/index.html) needs no JavaScript.
 When copying only [svg](svg), use `./arrakis-desert.svg` and `./arrakis-desert-still.svg` beside the stylesheet.
-The SVG embeds five aspect-specific snapshots, depth masks, and dust sprites.
+The SVG embeds seven aspect-specific snapshots, including square and 1.2:1 compositions for near-square viewports.
+Each snapshot includes its depth mask and the dust sprite.
 It contains no scripts or external resource references.
-CSS keyframes approximate the live storm with 208 clouds; gust timing and depth occlusion differ.
+CSS keyframes approximate the live storm with 48 clouds across far and near layers and 24 motion intervals; gust timing and depth occlusion differ.
 The terrain and moons are rasterized, so extreme enlargement can reveal fixed-resolution detail.
 The [still SVG](svg/arrakis-desert-still.svg) contains no animation declarations.
 The animated SVG does not apply reduced-motion preferences internally.

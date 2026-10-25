@@ -93,7 +93,8 @@ for (const [engineName, engine] of Object.entries({ chromium, webkit })) {
 
     for (const [shape, viewport] of Object.entries({ landscape: { width: 960, height: 600 }, portrait: { width: 390, height: 844 },
       phoneLandscape: { width: 844, height: 390 }, tablet: { width: 768, height: 1024 },
-      square: { width: 800, height: 1000 }, ultrawide: { width: 1280, height: 360 } })) {
+      square: { width: 800, height: 800 }, nearSquare: { width: 1130, height: 1000 },
+      ultrawide: { width: 1280, height: 360 } })) {
       for (const entry of ['webgl/index.html', 'webcomponent/index.html', 'svg/index.html']) {
         it(`${entry} shows each crescent and dunes in ${shape}`, async () => {
           const page = await browser.newPage({ viewport, reducedMotion: 'reduce' });
@@ -145,7 +146,7 @@ for (const [engineName, engine] of Object.entries({ chromium, webkit })) {
             await image.decode();
             const canvas = document.createElement('canvas');
             const renderer = createRenderer(canvas, canvas.getContext('webgl', { alpha: false }), [image]);
-            const frames = [[900,1600],[900,1200],[1920,1200],[2100,1000],[2400,750]];
+            const frames = [[900,1600],[900,1200],[1200,1200],[1440,1200],[1920,1200],[2100,1000],[2400,750]];
             const artwork = frames.map(([width,height]) => renderer.exportAssets(width,height).landscape);
             renderer.dispose();
             return artwork;
@@ -369,7 +370,8 @@ for (const [engineName, engine] of Object.entries({ chromium, webkit })) {
         const initial = PNG.sync.read(await page.screenshot());
         await page.waitForTimeout(700);
         const moving = PNG.sync.read(await page.screenshot());
-        assert.ok(changedFraction(initial, moving, 0.8) > 0.03, 'the animated asset retains its foreground motion');
+        const motion = changedFraction(initial, moving, 0.8);
+        assert.ok(motion > 0.01, `the animated asset retains foreground motion: ${motion}`);
       } finally { await page.close(); }
     });
 
@@ -380,7 +382,8 @@ for (const [engineName, engine] of Object.entries({ chromium, webkit })) {
       const initial = PNG.sync.read(await page.screenshot());
       await page.waitForTimeout(700);
       const moving = PNG.sync.read(await page.screenshot());
-      assert.ok(changedFraction(initial, moving, 0.8) > 0.03, 'foreground storm changes visible pixels');
+      const motion = changedFraction(initial, moving, 0.8);
+      assert.ok(motion > 0.01, `foreground storm changes visible pixels: ${motion}`);
       await page.emulateMedia({ reducedMotion: 'reduce' });
       await ready(page, 'svg/index.html');
       const still = await page.screenshot();
@@ -402,7 +405,8 @@ function assertMoons(png, shape, svg) { for (const moon of ['large', 'small']) a
 
 function assertMoon(png, shape, moon, svg = false) {
   const aspect = png.width / png.height;
-  const sourceAspect = svg ? aspect < 0.75 ? 0.5625 : aspect < 1.2 ? 0.75 : aspect < 1.8 ? 1.6 : aspect < 2.4 ? 2.1 : 3.2 : aspect;
+  const sourceAspect = svg ? aspect < 0.75 ? 0.5625 : aspect < 0.875 ? 0.75 : aspect < 1 ? 1
+    : aspect < 1.2 ? 1.2 : aspect < 1.8 ? 1.6 : aspect < 2.4 ? 2.1 : 3.2 : aspect;
   const t = Math.max(0, Math.min(1, (sourceAspect - 0.7) / 0.4));
   const portrait = 1 - t * t * (3 - 2 * t);
   const moonScale = 1 - 0.22 * portrait;
