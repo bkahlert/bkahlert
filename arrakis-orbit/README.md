@@ -1,13 +1,17 @@
 # Arrakis Orbit
 
 A self-contained Eclipse background: Arrakis crescent, restrained Caladan,
-a small moon, and a layered starfield. Open [index.html](index.html) to compare
+a small moon, and a layered starfield.
+
+[![arrakis-orbit.svg](svg/arrakis-orbit.svg)](svg/arrakis-orbit.svg)
+
+Open [index.html](index.html) to compare
 three formats side by side. The comparison scrolls horizontally on narrow screens.
 Live iframe previews follow frame focus; click a live preview to animate it.
 Each variant page contains only its background:
 
 | Variant              | Page                                               |
-| -------------------- | -------------------------------------------------- |
+|----------------------|----------------------------------------------------|
 | Live WebGL           | [webgl/index.html](webgl/index.html)               |
 | Native web component | [webcomponent/index.html](webcomponent/index.html) |
 | SVG CSS background   | [svg/index.html](svg/index.html)                   |
@@ -67,6 +71,7 @@ Copy the [webcomponent directory](webcomponent/index.html), keeping
 [assets directory](webcomponent/assets/CREDITS.txt). From that copied directory:
 
 ```html
+
 <script type="module" src="./arrakis-orbit.js"></script>
 <arrakis-orbit style="width:100%;height:480px" aria-hidden="true"></arrakis-orbit>
 ```
