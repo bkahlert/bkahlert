@@ -5,11 +5,15 @@ on:
     paths:
       - 'arrakis-desert/**'
       - 'arrakis-orbit/**'
+      - 'arrakis-desert-1984/**'
+      - 'arrakis-orbit-1984/**'
       - '.github/workflows/backgrounds.yml'
   pull_request:
     paths:
       - 'arrakis-desert/**'
       - 'arrakis-orbit/**'
+      - 'arrakis-desert-1984/**'
+      - 'arrakis-orbit-1984/**'
       - '.github/workflows/backgrounds.yml'
   workflow_dispatch:
 
@@ -28,7 +32,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        project: [arrakis-desert, arrakis-orbit]
+        project: [arrakis-desert, arrakis-orbit, arrakis-desert-1984, arrakis-orbit-1984]
     defaults:
       run:
         working-directory: ${{ matrix.project }}

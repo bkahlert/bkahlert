@@ -1,0 +1,22 @@
+{
+  "name": "arrakis-desert-1984",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone Arrakis desert backgrounds: WebGL, native web component, and SVG",
+  "scripts": {
+    "build": "node scripts/build.mjs && node scripts/build-svg.mjs",
+    "test": "node --test --test-concurrency=1 tests/*.test.cjs",
+    "serve": "node scripts/serve.mjs",
+    "check:generated": "node --test --test-name-pattern=\"build manifest\" tests/package.test.cjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "playwright": "1.63.0",
+    "pngjs": "7.0.0",
+    "sharp": "0.35.5"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "description": "Frozen user-approved 1984 prototype; historical GoodBytes captures do not validate this art.",
+  "approvedPrototypeSha256": "36af7c55e3e2aa893fe0a0eb9aa183c68056a3edb64dae6f5a00e61e9fc16775",
+  "rendererCoreSha256": "03d700a1c5e0762ca34d233b77424862dd75b8af1be9a1be5e185ea4cd40d218",
+  "drawSha256": "8f49aba341af5fc94f0fb6371a572b974b1124903fbc880ccdb75903d9b78e58",
+  "reference": "references/approved-desktop.jpg",
+  "referenceSha256": "a4c0f3c5ab2c43c40bb6a8b328a07fee38354d93693142f969453b17a82ca018"
+}

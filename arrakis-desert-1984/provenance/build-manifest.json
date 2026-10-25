@@ -1,0 +1,29 @@
+{
+  "sha256": {
+    "src/scene.js": "0f5f58cf49e5f809d8cc665def2cd4c65116f272746110214da344fba001f6e8",
+    "src/scene.css": "2495c7ac770344333f33da94c0444f3c8cc36852ad9905f02378813e567b3ff1",
+    "src/component.js": "7dfb330c32fd91b5fd7fd21d61f4fded7324d70beaf584185876036c0d54ae33",
+    "src/assets/moon.jpg": "32168f63ebfd888f166e395b069b73468d7c6c235c8ac009b40a01474483612e",
+    "src/assets/CREDITS.txt": "c8be1b3a15945c77d4d271c877466a8645a09868594f5ff2c7f86b2b5a77a3de",
+    "scripts/build.mjs": "3d7cf5e752bd757465c1b074e236dbfec32364751e4d9d1a99e35bf6be369b09",
+    "scripts/build-svg.mjs": "e43be751b3bfc924d898a61f360fddbd1282d7953f02ea4b4921bb00ffd98a80",
+    "scripts/serve.mjs": "c8d34c604b380224546de7c63d0e80d06d66f40d75ccdcd376fc53bb7c9297f6",
+    "package.json": "42f36b8e01b22fbbfa86748685f18af2cb06c93ee64c113747850713ab7a7144",
+    "package-lock.json": "c4d67e2ade0c4a392ce4432d712696f7f9224783bda978cd3aa4379b57a70ed2",
+    "index.html": "81bb6a67e821cd540bd8d1a5d336119ac28841b3f11fd356eb501e8afae4f385",
+    "webgl/index.html": "281f8d9667206a0e4ec9a2a15db82a2387425a7266eae8babb9389268de75ee4",
+    "webcomponent/index.html": "f0e9357ffee678fbc89ae378a5a464ff79a26e0fe5a169d69deb90f02484c109",
+    "svg/index.html": "1deedf8ec336efef058fbc75123ddd2b6561668588b7c2f6ccbfb69d9efb954b",
+    "webgl/scene.js": "0f5f58cf49e5f809d8cc665def2cd4c65116f272746110214da344fba001f6e8",
+    "webgl/scene.css": "2495c7ac770344333f33da94c0444f3c8cc36852ad9905f02378813e567b3ff1",
+    "webgl/assets/moon.jpg": "32168f63ebfd888f166e395b069b73468d7c6c235c8ac009b40a01474483612e",
+    "webgl/assets/CREDITS.txt": "c8be1b3a15945c77d4d271c877466a8645a09868594f5ff2c7f86b2b5a77a3de",
+    "webgl/arrakis-desert-1984-still.svg": "04cd141a0c16d77bd4746aff53ff93751dc29e80b34baffecfa16568dd16d45a",
+    "webcomponent/arrakis-desert-1984.js": "f0e034bb460bd534ceb4422db6941d140fb8336dd62c1b15eb6852d69217dbc1",
+    "webcomponent/assets/moon.jpg": "32168f63ebfd888f166e395b069b73468d7c6c235c8ac009b40a01474483612e",
+    "webcomponent/assets/CREDITS.txt": "c8be1b3a15945c77d4d271c877466a8645a09868594f5ff2c7f86b2b5a77a3de",
+    "webcomponent/arrakis-desert-1984-still.svg": "04cd141a0c16d77bd4746aff53ff93751dc29e80b34baffecfa16568dd16d45a",
+    "svg/arrakis-desert-1984.svg": "5e2237e40b13f498d90023b7666821b9c6cb97a6343b583e1e253a06119fa5c4",
+    "svg/arrakis-desert-1984-still.svg": "04cd141a0c16d77bd4746aff53ff93751dc29e80b34baffecfa16568dd16d45a"
+  }
+}

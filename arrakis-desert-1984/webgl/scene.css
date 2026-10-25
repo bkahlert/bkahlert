@@ -1,0 +1,21 @@
+.choam-universe {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #030205;
+  contain: strict;
+}
+.choam-universe canvas,
+.choam-universe__still {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.choam-universe canvas { opacity: 0; }
+.choam-universe--ready canvas { opacity: 1; }
+.choam-universe--loading .choam-universe__still { background-image: none; }
+.choam-universe__still {
+  background: #030205 var(--still-image) center / cover;
+}
