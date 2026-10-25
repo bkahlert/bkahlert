@@ -150,9 +150,9 @@ for (const [engineName, engine] of Object.entries({ chromium, webkit })) {
             renderer.dispose();
             return artwork;
           });
-          await page.route('**/arrakis-still.svg', route => {
+          await page.route('**/arrakis-desert-still.svg', route => {
             let index = 0;
-            const svg = fs.readFileSync(path.join(__dirname, '../svg/arrakis-still.svg'), 'utf8');
+            const svg = fs.readFileSync(path.join(__dirname, '../svg/arrakis-desert-still.svg'), 'utf8');
             const negative = svg.replace(/data:image\/jpeg;base64,[^"\s]+/gu, () => artwork[index++]);
             return route.fulfill({ contentType: 'image/svg+xml', body: negative });
           });
@@ -201,7 +201,7 @@ for (const [engineName, engine] of Object.entries({ chromium, webkit })) {
       const temporary = fs.mkdtempSync(path.join(os.tmpdir(), 'arrakis-desert-'));
       const folder = path.join(temporary, 'nested', 'background');
       fs.mkdirSync(folder, { recursive: true });
-      const files = ['arrakis-desert.js', 'arrakis-still.svg', 'assets/moon.jpg'];
+      const files = ['arrakis-desert.js', 'arrakis-desert-still.svg', 'assets/moon.jpg'];
       for (const file of files) {
         fs.mkdirSync(path.dirname(path.join(folder,file)), { recursive: true });
         fs.copyFileSync(path.join(__dirname,'../webcomponent',file), path.join(folder,file));
@@ -227,8 +227,8 @@ for (const [engineName, engine] of Object.entries({ chromium, webkit })) {
           await image.decode();
           return new URL(image.src).pathname;
         });
-        assert.equal(fallback, '/nested/background/arrakis-still.svg');
-        assert.ok(requests.includes('/nested/background/arrakis-still.svg'));
+        assert.equal(fallback, '/nested/background/arrakis-desert-still.svg');
+        assert.ok(requests.includes('/nested/background/arrakis-desert-still.svg'));
         assert.ok(!requests.includes('/assets/moon.jpg'));
         const dimensions = await page.locator('canvas').evaluate(canvas => [canvas.width,canvas.height]);
         assert.deepEqual(dimensions,[1280,720]);
@@ -284,7 +284,7 @@ for (const [engineName, engine] of Object.entries({ chromium, webkit })) {
     it('keeps the animated SVG asset moving independently of host media preferences', async () => {
       const page = await browser.newPage({ viewport: { width: 640, height: 400 }, reducedMotion: 'reduce' });
       try {
-        await page.goto(`${url}/svg/arrakis.svg`);
+        await page.goto(`${url}/svg/arrakis-desert.svg`);
         const initial = PNG.sync.read(await page.screenshot());
         await page.waitForTimeout(700);
         const moving = PNG.sync.read(await page.screenshot());

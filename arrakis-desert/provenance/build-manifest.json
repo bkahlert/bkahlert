@@ -1,24 +1,24 @@
 {
   "sha256": {
     "src/scene.js": "55e1efb637523131d5b98126258fdea89483f75f99fbc87bb4f36a826c330d46",
-    "src/scene.css": "45d098f607c5e17f61c4029d4f597b5724f6656f632492f80ff1d2d8ed8612d4",
-    "src/component.js": "adc70a199d9d5820b3fd656db3cb70d7848074f00f810b2043f9719ab87cac8b",
+    "src/scene.css": "c6f9d1acb5443eb4a00a82605e427c8da0d285afbef4967a84be9b9d6396e465",
+    "src/component.js": "8a05ad9d9d9933a7ab81200159e3d90527437ad574626312510ce6c34c63defa",
     "src/assets/moon.jpg": "32168f63ebfd888f166e395b069b73468d7c6c235c8ac009b40a01474483612e",
     "src/assets/CREDITS.txt": "11234953132e69f3c1eee09af2196f3eaaccc8cf0053a336bdd4a19307a8e27a",
     "scripts/build.mjs": "22cae78490a79436abf0265a27ef6bd5b49d17f10f43209eff491b26e103ce5d",
-    "scripts/build-svg.mjs": "186af32bd51455af53b5f8775e8aa26a2c8508f4cb718855fe9f60c09c6f0f2e",
+    "scripts/build-svg.mjs": "a5b21025fd7a2c0ee560c07decef4a5f0cfbd4ec599265ba26bebab21f5711bf",
     "package.json": "7fd9d77d0f08fb294a1e564894b90d7d4202543b06c08aed07ee447ac2dd9931",
     "package-lock.json": "69ca84032d5c8d7212083095769b792ea79a20ee11aa1b706bbf606e0e7f51ed",
     "webgl/scene.js": "55e1efb637523131d5b98126258fdea89483f75f99fbc87bb4f36a826c330d46",
-    "webgl/scene.css": "45d098f607c5e17f61c4029d4f597b5724f6656f632492f80ff1d2d8ed8612d4",
+    "webgl/scene.css": "c6f9d1acb5443eb4a00a82605e427c8da0d285afbef4967a84be9b9d6396e465",
     "webgl/assets/moon.jpg": "32168f63ebfd888f166e395b069b73468d7c6c235c8ac009b40a01474483612e",
     "webgl/assets/CREDITS.txt": "11234953132e69f3c1eee09af2196f3eaaccc8cf0053a336bdd4a19307a8e27a",
-    "webgl/arrakis-still.svg": "3167847464021aaa6edd8b2aa6048da06c9206fb4a56fa988dc1895a53a33dd9",
-    "webcomponent/arrakis-desert.js": "4e6139ec9ea26f5035ab3d55652abe0d5a989ccb128df117988e9adfd0668cdf",
+    "webgl/arrakis-desert-still.svg": "3167847464021aaa6edd8b2aa6048da06c9206fb4a56fa988dc1895a53a33dd9",
+    "webcomponent/arrakis-desert.js": "b708189546c1bdef6d48a173625068335a5db0f4f2d344b908c0c413b552f176",
     "webcomponent/assets/moon.jpg": "32168f63ebfd888f166e395b069b73468d7c6c235c8ac009b40a01474483612e",
     "webcomponent/assets/CREDITS.txt": "11234953132e69f3c1eee09af2196f3eaaccc8cf0053a336bdd4a19307a8e27a",
-    "webcomponent/arrakis-still.svg": "3167847464021aaa6edd8b2aa6048da06c9206fb4a56fa988dc1895a53a33dd9",
-    "svg/arrakis.svg": "ed1f2b9e32b61dc0f6b5782ed9827fe1a088cc2a5d66c97f1adaae3ec516a76e",
-    "svg/arrakis-still.svg": "3167847464021aaa6edd8b2aa6048da06c9206fb4a56fa988dc1895a53a33dd9"
+    "webcomponent/arrakis-desert-still.svg": "3167847464021aaa6edd8b2aa6048da06c9206fb4a56fa988dc1895a53a33dd9",
+    "svg/arrakis-desert.svg": "ed1f2b9e32b61dc0f6b5782ed9827fe1a088cc2a5d66c97f1adaae3ec516a76e",
+    "svg/arrakis-desert-still.svg": "3167847464021aaa6edd8b2aa6048da06c9206fb4a56fa988dc1895a53a33dd9"
   }
 }

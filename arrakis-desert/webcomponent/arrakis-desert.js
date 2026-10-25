@@ -685,7 +685,7 @@ function createRenderer(target, gl, images) {
 }
 
 // src/scene.css
-var scene_default = ".choam-universe {\n  --still-image: url('./arrakis-still.svg');\n  position: absolute;\n  inset: 0;\n  overflow: hidden;\n  pointer-events: none;\n  background: #211b16;\n  contain: strict;\n}\n.choam-universe canvas,\n.choam-universe__still {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n}\n.choam-universe canvas { opacity: 0; }\n.choam-universe--ready canvas { opacity: 1; }\n.choam-universe--loading .choam-universe__still { background-image: none; }\n.choam-universe__still {\n  background: #211b16 var(--still-image) center / cover;\n}\n";
+var scene_default = ".choam-universe {\n  --still-image: url('./arrakis-desert-still.svg');\n  position: absolute;\n  inset: 0;\n  overflow: hidden;\n  pointer-events: none;\n  background: #211b16;\n  contain: strict;\n}\n.choam-universe canvas,\n.choam-universe__still {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n}\n.choam-universe canvas { opacity: 0; }\n.choam-universe--ready canvas { opacity: 1; }\n.choam-universe--loading .choam-universe__still { background-image: none; }\n.choam-universe__still {\n  background: #211b16 var(--still-image) center / cover;\n}\n";
 
 // src/component.js
 var ArrakisDesert = class extends HTMLElement {
@@ -705,7 +705,7 @@ var ArrakisDesert = class extends HTMLElement {
   connectedCallback() {
     this.#controller = mountDesert(this.#root);
     const fallback = this.#root.querySelector(".choam-universe__still");
-    fallback.style.setProperty("--still-image", `url("${new URL("./arrakis-still.svg", import.meta.url).href}")`);
+    fallback.style.setProperty("--still-image", `url("${new URL("./arrakis-desert-still.svg", import.meta.url).href}")`);
     if (this.hasAttribute("paused")) this.#controller.pause();
   }
   /** Releases rendering resources when the element leaves its document. */

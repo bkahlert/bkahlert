@@ -21,7 +21,7 @@ export class ArrakisDesert extends HTMLElement {
   connectedCallback() {
     this.#controller = mountDesert(this.#root);
     const fallback = this.#root.querySelector('.choam-universe__still');
-    fallback.style.setProperty('--still-image', `url("${new URL('./arrakis-still.svg', import.meta.url).href}")`);
+    fallback.style.setProperty('--still-image', `url("${new URL('./arrakis-desert-still.svg', import.meta.url).href}")`);
     if (this.hasAttribute('paused')) this.#controller.pause();
   }
 

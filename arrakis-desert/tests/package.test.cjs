@@ -25,7 +25,7 @@ test('renderer exposes a reusable mount without source rewriting', () => {
 });
 
 test('generated SVG embeds artwork without scripts or external resources', () => {
-  for (const file of ['svg/arrakis.svg','svg/arrakis-still.svg']) {
+  for (const file of ['svg/arrakis-desert.svg','svg/arrakis-desert-still.svg']) {
     const svg = fs.readFileSync(path.join(__dirname, '..', file), 'utf8');
     assert.doesNotMatch(svg, /<script|<foreignObject|onload=|href="(?:https?:|\/)/u);
     const references = [...svg.matchAll(/href="(?<reference>[^"]+)"/gu)].map(match => match.groups.reference);

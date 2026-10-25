@@ -140,20 +140,20 @@ ${compositions.map((composition, index) => {
 `;
 }
 const svg = composeSvg(true);
-await writeFile(new URL('svg/arrakis.svg', directory), svg);
-await writeFile(new URL('svg/arrakis-still.svg', directory), composeSvg(false));
+await writeFile(new URL('svg/arrakis-desert.svg', directory), svg);
+await writeFile(new URL('svg/arrakis-desert-still.svg', directory), composeSvg(false));
 const sizeMiB = (Buffer.byteLength(svg) / 1024 / 1024).toFixed(2);
-console.log(`Created arrakis.svg: ${sizeMiB} MiB; 208 dust clouds; five responsive compositions.`);
+console.log(`Created arrakis-desert.svg: ${sizeMiB} MiB; 208 dust clouds; five responsive compositions.`);
 
 for (const variant of ['webgl', 'webcomponent']) {
-  await copyFile(new URL('svg/arrakis-still.svg', directory), new URL(`${variant}/arrakis-still.svg`, directory));
+  await copyFile(new URL('svg/arrakis-desert-still.svg', directory), new URL(`${variant}/arrakis-desert-still.svg`, directory));
 }
 
 const files = ['src/scene.js', 'src/scene.css', 'src/component.js', 'src/assets/moon.jpg', 'src/assets/CREDITS.txt',
   'scripts/build.mjs', 'scripts/build-svg.mjs', 'package.json', 'package-lock.json',
-  'webgl/scene.js', 'webgl/scene.css', 'webgl/assets/moon.jpg', 'webgl/assets/CREDITS.txt', 'webgl/arrakis-still.svg',
+  'webgl/scene.js', 'webgl/scene.css', 'webgl/assets/moon.jpg', 'webgl/assets/CREDITS.txt', 'webgl/arrakis-desert-still.svg',
   'webcomponent/arrakis-desert.js', 'webcomponent/assets/moon.jpg', 'webcomponent/assets/CREDITS.txt',
-  'webcomponent/arrakis-still.svg', 'svg/arrakis.svg', 'svg/arrakis-still.svg'];
+  'webcomponent/arrakis-desert-still.svg', 'svg/arrakis-desert.svg', 'svg/arrakis-desert-still.svg'];
 const sha256 = {};
 for (const file of files) {
   sha256[file] = createHash('sha256').update(await readFile(new URL(file, directory))).digest('hex');

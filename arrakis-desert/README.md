@@ -3,12 +3,14 @@
 Two textured crescents above procedural dunes and a moving sandstorm.
 This directory is a standalone project. Copy it anywhere without its parent repository.
 
+[![arrakis-desert.svg](svg/arrakis-desert.svg)](svg/arrakis-desert.svg)
+
 Open [index.html](index.html) to compare all three variants side by side.
 The labeled iframe panels remain in one row and scroll horizontally on narrow screens.
 Live iframe previews follow frame focus; click a live preview to animate it.
 
 | Page                                               | Format                                           |
-| -------------------------------------------------- | ------------------------------------------------ |
+|----------------------------------------------------|--------------------------------------------------|
 | [webgl/index.html](webgl/index.html)               | Original live WebGL renderer                     |
 | [webcomponent/index.html](webcomponent/index.html) | Native `<arrakis-desert>` custom element         |
 | [svg/index.html](svg/index.html)                   | Self-contained SVG used only as a CSS background |
@@ -40,6 +42,7 @@ The [webgl](webgl) and [svg](svg) directories are independently copyable in the 
 Serve any copied variant directory with an ordinary static HTTP server.
 
 ```html
+
 <script type="module" src="/backgrounds/arrakis-desert/webcomponent/arrakis-desert.js"></script>
 <div style="position:relative;width:100%;height:32rem">
   <arrakis-desert style="width:100%;height:100%"></arrakis-desert>
@@ -71,20 +74,20 @@ From a stylesheet at the project root:
 
 ```css
 .desert {
-  background: #211b16 url('./svg/arrakis.svg') center / 100% 100%;
+  background: #211b16 url('./svg/arrakis-desert.svg') center / 100% 100%;
 }
 @media (prefers-reduced-motion: reduce) {
-  .desert { background-image: url('./svg/arrakis-still.svg'); }
+  .desert { background-image: url('./svg/arrakis-desert-still.svg'); }
 }
 ```
 
 Give the element a width and height. The [SVG variant](svg/index.html) needs no JavaScript.
-When copying only [svg](svg), use `./arrakis.svg` and `./arrakis-still.svg` beside the stylesheet.
+When copying only [svg](svg), use `./arrakis-desert.svg` and `./arrakis-desert-still.svg` beside the stylesheet.
 The SVG embeds five aspect-specific snapshots, depth masks, and dust sprites.
 It contains no scripts or external resource references.
 CSS keyframes approximate the live storm with 208 clouds; gust timing and depth occlusion differ.
 The terrain and moons are rasterized, so extreme enlargement can reveal fixed-resolution detail.
-The [still SVG](svg/arrakis-still.svg) contains no animation declarations.
+The [still SVG](svg/arrakis-desert-still.svg) contains no animation declarations.
 The animated SVG does not apply reduced-motion preferences internally.
 Its host must select the still SVG using the media query above; [svg/index.html](svg/index.html) already does this.
 

@@ -1,5 +1,5 @@
 .choam-universe {
-  --still-image: url('./arrakis-still.svg');
+  --still-image: url('./arrakis-desert-still.svg');
   position: absolute;
   inset: 0;
   overflow: hidden;
