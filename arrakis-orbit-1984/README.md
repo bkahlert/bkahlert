@@ -3,7 +3,7 @@
 Crimson twilight behind cyan textured moons and an eclipsed Arrakis at lower left.
 The approved WebGL artwork is preserved, including slow rotation and cloud time.
 
-[![arrakis-orbit-1984.svg](svg/arrakis-orbit-1984.svg)](svg/arrakis-orbit-1984.svg)
+[![Arrakis Orbit (1984)](svg/arrakis-orbit-1984.svg)](svg/arrakis-orbit-1984.svg)
 
 Open [index.html](index.html) to compare the three formats. Each runtime page
 contains only the decorative background.

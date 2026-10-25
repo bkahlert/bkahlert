@@ -1,9 +1,9 @@
-# Arrakis desert (1984)
+# Arrakis Desert (1984)
 
 An independent crimson desert background with cyan textured moons and moving dust.
 The upper moon sits right; the lower moon sits left behind the dunes.
 
-[![arrakis-desert-1984.svg](svg/arrakis-desert-1984.svg)](svg/arrakis-desert-1984.svg)
+[![Arrakis Desert (1984)](svg/arrakis-desert-1984.svg)](svg/arrakis-desert-1984.svg)
 
 Open the [comparison](index.html) to compare the three formats.
 Each distribution folder can be copied into an unrelated HTTP root:

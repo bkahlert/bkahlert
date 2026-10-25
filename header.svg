@@ -1,0 +1,67 @@
+<svg fill="none" viewBox="0 0 800 400" width="800" height="400" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="100%" height="100%">
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <style>
+        .container {
+        margin: 0;
+        background-color: #f0f0f0;
+        }
+      </style>
+      <div class="container">
+        <table>
+          <tr>
+            <td>
+              <a href="arrakis-desert/README.md">
+                <img src="arrakis-desert/svg/arrakis-desert-still.svg" width="100" alt="Arrakis Desert"/>
+              </a>
+            </td>
+            <td>
+              <a href="arrakis-desert-1984/README.md">
+                <img src="arrakis-desert-1984/svg/arrakis-desert-1984-still.svg" width="100"
+                     alt="Arrakis Desert (1984)"/>
+              </a>
+            </td>
+            <td>
+              <a href="arrakis-orbit/README.md">
+                <img src="arrakis-orbit/svg/arrakis-orbit-still.svg" width="100" alt="Arrakis Orbit"/>
+              </a>
+            </td>
+            <td>
+              <a href="arrakis-orbit-1984/README.md">
+                <img src="arrakis-orbit-1984/svg/arrakis-orbit-1984-still.svg" width="100" alt="Arrakis Orbit (1984)"/>
+              </a>
+            </td>
+          </tr>
+        </table>
+
+        <table>
+          <tr>
+            <td>
+              <a href="nyancat/README.md">
+                <img src="nyancat/nyancat.svg" width="100" alt="NYAN.CAT!"/>
+              </a>
+            </td>
+            <td>
+              <a href="https://github.com/bkahlert/pihero/tree/main/packages/kaomoji">
+                <img src="https://github.com/bkahlert/pihero/blob/main/packages/kaomoji/assets/hero.gif?raw=true"
+                     width="100" alt="Kaomoji Hero"/>
+              </a>
+            </td>
+            <td>
+              <a href="https://github.com/bkahlert/pihero/tree/main/packages/kaomoji">
+                <img src="https://github.com/bkahlert/pihero/blob/main/packages/kaomoji/assets/wizard.gif?raw=true"
+                     width="100" alt="Kaomoji Wizard"/>
+              </a>
+            </td>
+            <td>
+              <a href="https://github.com/bkahlert/pihero/tree/main/packages/kaomoji">
+                <img src="https://github.com/bkahlert/pihero/blob/main/packages/kaomoji/assets/visitor.gif?raw=true"
+                     width="100" alt="Kaomoji Visitor"/>
+              </a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </foreignObject>
+</svg>

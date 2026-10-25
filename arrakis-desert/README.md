@@ -1,9 +1,9 @@
-# Arrakis desert
+# Arrakis Desert
 
 Two textured crescents above procedural dunes and a moving sandstorm.
 This directory is a standalone project. Copy it anywhere without its parent repository.
 
-[![arrakis-desert.svg](svg/arrakis-desert.svg)](svg/arrakis-desert.svg)
+[![Arrakis Desert](svg/arrakis-desert.svg)](svg/arrakis-desert.svg)
 
 Open [index.html](index.html) to compare all three variants side by side.
 The labeled iframe panels remain in one row and scroll horizontally on narrow screens.

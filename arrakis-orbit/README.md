@@ -3,7 +3,7 @@
 A self-contained Eclipse background: Arrakis crescent, restrained Caladan,
 a small moon, and a layered starfield.
 
-[![arrakis-orbit.svg](svg/arrakis-orbit.svg)](svg/arrakis-orbit.svg)
+[![Arrakis Orbit](svg/arrakis-orbit.svg)](svg/arrakis-orbit.svg)
 
 Open [index.html](index.html) to compare
 three formats side by side. The comparison scrolls horizontally on narrow screens.
