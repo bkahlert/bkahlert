@@ -1,0 +1,67 @@
+.choam-universe {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #03050a;
+  contain: strict;
+  container-type: size;
+}
+
+.choam-universe canvas,
+.choam-universe__still {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.choam-universe canvas {
+  opacity: 0;
+}
+
+.choam-universe--ready canvas {
+  opacity: 1 !important;
+}
+
+.choam-universe--loading .choam-universe__still i {
+  visibility: hidden;
+}
+
+.choam-universe__still {
+  background:
+    radial-gradient(1px 1px at 19px 39px, #98b5cf 60%, transparent),
+    radial-gradient(1px 1px at 73px 109px, #cebc9b 60%, transparent),
+    radial-gradient(1px 1px at 47px 17px, #506b88 60%, transparent),
+    radial-gradient(ellipse at 75% 75%, #18202c, #05070e 65%);
+  background-size: 137px 163px, 211px 197px, 89px 113px, 100% 100%;
+}
+
+.choam-universe__still i {
+  position: absolute;
+  left: calc(20% - 53cqmin);
+  top: calc(84% - 53cqmin);
+  width: 106cqmin;
+  height: 106cqmin;
+  border-radius: 50%;
+  background: radial-gradient(circle at 76% 64%, #030409 52%, #281b10 62%, #ae773e 72%, #e5b474 78%);
+  box-shadow: -5px -2px 16px #b478402e;
+}
+
+.choam-universe__still i:nth-child(2) {
+  width: 8.6cqmin;
+  height: 8.6cqmin;
+  left: calc(86% - 4.3cqmin);
+  top: calc(20% - 4.3cqmin);
+  background: radial-gradient(circle at 25% 30%, #3b5059, #102734 32%, #03060e 72%);
+  box-shadow: -4px -2px 14px #528ea433;
+}
+
+.choam-universe__still i:nth-child(3) {
+  width: 5cqmin;
+  height: 5cqmin;
+  left: calc(64% - 2.5cqmin);
+  top: calc(50% - 2.5cqmin);
+  background: radial-gradient(circle at 25% 25%, #888176, #19181a 60%, #030409 80%);
+}

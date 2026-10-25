@@ -1,0 +1,23 @@
+CHOAM background texture credits
+
+Planet maps by Solar System Scope / INOVE, based on NASA elevation and imagery.
+Source collection: https://www.solarsystemscope.com/textures/
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0):
+https://creativecommons.org/licenses/by/4.0/
+
+File: arrakis.jpg
+Source: https://www.solarsystemscope.com/textures/download/8k_mars.jpg
+Adapted: resized from 8192 x 4096 to 4096 x 2048; desaturated and recolored
+to sand and ochre for a fictional desert planet; JPEG recompressed.
+
+File: caladan-clouds.jpg
+Source: https://www.solarsystemscope.com/textures/download/8k_earth_clouds.jpg
+Adapted: grayscale, resized from 8192 x 4096 to 2048 x 1024; JPEG recompressed.
+Rendered over a fictional ocean with separate cloud movement and shadows.
+
+File: moon.jpg
+Source: https://www.solarsystemscope.com/textures/download/2k_moon.jpg
+Adapted: grayscale, resized from 2048 x 1024 to 1024 x 512; JPEG recompressed.
+
+These are artistic interpretations, not astronomical or canonical Dune maps.
+No endorsement by the texture authors or NASA is implied.

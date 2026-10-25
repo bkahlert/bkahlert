@@ -1,0 +1,13 @@
+Arrakis desert study
+
+Visual composition reference: GoodBytes, https://arrakis.goodbytes.be/
+No code, audio, or image assets are copied from that demo.
+Dune terrain, materials, dust, composition, and renderer: original code in scene.js.
+
+Asset moon.jpg: Solar System Scope, Moon color map.
+Source: https://www.solarsystemscope.com/textures/download/8k_moon.jpg
+License: CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
+Source catalogue: https://www.solarsystemscope.com/textures/
+Modified: grayscale, LANCZOS resize to 4096x2048, progressive JPEG quality93.
+The two fictional moons use different orientations of this Earth-Moon map.
+The source project preserves its regeneration recipe in scripts/prepare_texture.py.

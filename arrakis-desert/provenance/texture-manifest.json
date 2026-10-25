@@ -1,0 +1,23 @@
+{
+  "source": {
+    "url": "https://www.solarsystemscope.com/textures/download/8k_moon.jpg",
+    "sha256": "d1875bcec83588ca25e4802e576f6bb9f88b39e1e403cb41ff55867419c54796"
+  },
+  "output": {
+    "file": "src/assets/moon.jpg",
+    "size_bytes": 3610245,
+    "sha256": "32168f63ebfd888f166e395b069b73468d7c6c235c8ac009b40a01474483612e"
+  },
+  "recipe": {
+    "pillow": "12.0.0",
+    "convert": "L",
+    "resize": [
+      4096,
+      2048
+    ],
+    "filter": "LANCZOS",
+    "jpeg_quality": 93,
+    "progressive": true,
+    "optimize": true
+  }
+}
