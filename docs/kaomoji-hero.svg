@@ -1,74 +1,42 @@
-<svg fill="none" viewBox="0 0 2000 400" width="2000" height="400" xmlns="http://www.w3.org/2000/svg">
-    <style>
-        @keyframes background-movement {
-            0% { background-position: 0% 0%; }
-            40% { background-position: 50% 0%; }
-            50% { background-position: 50% 50%; }
-            90% { background-position: 0% 50%; }
-            100% { background-position: 0% 0%; }
-        }
-
-        .bg {
-            background: rgb(41,171,226);
-            background: radial-gradient(circle at 50% 50%, rgba(41, 171, 226, 1), rgba(100, 139, 224, 1), rgba(163, 94, 187, 1),
-            rgba(194, 30, 115, 1), rgba(247, 79, 87, 1), rgba(255, 146, 52, 1),
-            rgba(235, 178, 29, 1.0), rgba(203, 207, 40, 1), rgba(153, 196, 53, 1),
-            rgba(105, 183, 69, 1), rgba(4, 169, 113, 1), rgba(0, 151, 139, 1),
-            rgba(1, 129, 143, 1), rgba(0, 144, 170, 1), rgba(0, 158, 198, 1), rgba(41, 171, 226, 1));
-            background-size: 1500% 1500%;
-            background-origin: content-box;
-            animation: background-movement 60s ease infinite;
-        }
-
-        .fg {
-            color: transparent;
-            text-shadow: 0px 2px 3px rgba(255,255,255,0.5);
-            -webkit-background-clip: text;
-            -moz-background-clip: text;
-            background-clip: text;
-            animation-delay: -30s;
-        }
-
-        h1, h2, h3, h4, h5, h6, div, span, p {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            width: 100%;
-            height: 400px;
-
-            box-sizing: border-box;
-            border-radius: 10px;
-            color: white;
-            text-align: center;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 167px;
-            line-height: 1.3;
-        }
-
-        h2 {
-            position: relative;
-            height: 0;
-            top: -.8em;
-            left: 13.5em;
-            margin-top: -1em;
-            color: transparent;
-            font-size: 1em;
-            text-shadow: 0 0 .5px rgba(0, 0, 0, .5);
-            z-index: 1;
-        }
-    </style>
-    <foreignObject width="100%" height="100%">
-        <div xmlns="http://www.w3.org/1999/xhtml" class="container">
-            <h1 class="bg fg">⸺̲͞ (((ꎤ ✧曲✧)—̠͞o </h1>
-        </div>
-    </foreignObject>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 400" width="2000" height="400" role="img"
+     aria-labelledby="kaomoji-hero-title kaomoji-hero-description">
+  <title id="kaomoji-hero-title">Kaomoji hero: ⸺̲͞ (((ꎤ ✧曲✧)—̠͞o</title>
+  <desc id="kaomoji-hero-description">A sparkling expression drawn as scalable vector paths with a slowly moving, subtle
+    rainbow gradient on a transparent canvas.
+  </desc>
+  <defs>
+    <linearGradient id="kaomoji-hero-base-gradient" x1="190" y1="110" x2="1810" y2="290" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#76c9cf"/>
+      <stop offset="0.48" stop-color="#78d1bd"/>
+      <stop offset="1" stop-color="#a0d995"/>
+    </linearGradient>
+    <radialGradient id="kaomoji-hero-rainbow-gradient" cx="1000" cy="200" r="1600" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#29abe2"/>
+      <stop offset="0.14" stop-color="#648be0"/>
+      <stop offset="0.28" stop-color="#a35ebb"/>
+      <stop offset="0.42" stop-color="#c21e73"/>
+      <stop offset="0.56" stop-color="#f74f57"/>
+      <stop offset="0.7" stop-color="#ff9234"/>
+      <stop offset="0.82" stop-color="#ebc33b"/>
+      <stop offset="0.92" stop-color="#69b745"/>
+      <stop offset="1" stop-color="#049b91"/>
+      <animateTransform attributeName="gradientTransform" type="translate"
+                        values="-800 160; 200 -220; 800 160; -200 220; -800 160" keyTimes="0; 0.25; 0.5; 0.75; 1"
+                        keySplines="0.42 0 0.58 1; 0.42 0 0.58 1; 0.42 0 0.58 1; 0.42 0 0.58 1" calcMode="spline"
+                        dur="18s" repeatCount="indefinite"/>
+    </radialGradient>
+    <filter id="kaomoji-hero-glow" x="-10%" y="-20%" width="120%" height="140%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="2" stdDeviation="1.5" flood-color="#ffffff" flood-opacity="0.42"/>
+    </filter>
+    <g id="kaomoji-hero-shapes" transform="translate(1000 200) scale(1.25) translate(-1000 -200)">
+      <path id="kaomoji-hero-expression-lines"
+            d="M 307.4347,212.31646 H 587.29017 V 191.523 H 307.4347 Z m 257.59424,67.68066 h 52.1875 v -14.67773 h -52.1875 z M 518.95716,146.75591 H 663.28822 V 131.99664 H 518.95716 Z m 144.24952,131.52881 h 21.85351 c -12.1499,-14.35156 -21.52734,-45.41943 -21.52734,-73.14404 0,-27.80615 9.37744,-58.87403 21.52734,-73.0625 h -21.85351 c -16.8794,20.14111 -24.21827,43.70703 -24.21827,73.14404 0,29.19238 7.33887,52.7583 24.21827,73.0625 z m 63.7666,0 h 21.85351 c -12.1499,-14.35156 -21.52734,-45.41943 -21.52734,-73.14404 0,-27.80615 9.37744,-58.87403 21.52734,-73.0625 h -21.85351 c -16.8794,20.14111 -24.21826,43.70703 -24.21826,73.14404 0,29.19238 7.33886,52.7583 24.21826,73.0625 z m 63.7666,0 h 21.85351 c -12.1499,-14.35156 -21.52734,-45.41943 -21.52734,-73.14404 0,-27.80615 9.37744,-58.87403 21.52734,-73.0625 h -21.85351 c -16.8794,20.14111 -24.21826,43.70703 -24.21826,73.14404 0,29.19238 7.33886,52.7583 24.21826,73.0625 z"/>
+      <path id="kaomoji-hero-loop"
+            d="m 873.3964,211.857 v 42.919 q 0,18.036 -18.537,18.036 -8.183,0 -14.362,-5.678 -6.012,-5.678 -12.024,-17.702 7.515,-1.002 13.36,-6.847 0.668,9.853 5.177,14.863 4.509,4.843 8.851,4.843 5.177,0 5.177,-7.014 v -42.752 q -16.533,-1.837 -26.887,-13.193 -10.354,-11.523 -10.354,-26.052 0,-16.032 12.024,-27.722 12.191,-11.857 29.225,-11.857 17.034,0 29.058,11.857 12.191,11.69 12.191,27.722 0,13.527 -9.018,24.549 -9.018,10.855 -23.881,14.028 z m -8.35,-10.855 q 12.525,0 21.543,-8.183 9.018,-8.183 9.018,-19.539 0,-11.356 -9.018,-19.706 -9.018,-8.35 -21.543,-8.35 -12.525,0 -21.543,8.35 -9.018,8.35 -9.018,19.706 0,11.356 9.018,19.539 9.018,8.183 21.543,8.183 z"/>
+      <path id="kaomoji-hero-sparkles-and-center"
+            d="m 1023.8314,126.00563 h 7.0127 q 3.751,24.13672 20.4673,39.38526 16.7979,15.16699 36.1235,17.28711 v 6.84961 q -19.2441,1.95703 -36.1235,17.36865 -16.7978,15.33008 -20.4673,39.22217 h -7.0127 q -3.6694,-24.13672 -20.4673,-39.30371 -16.79781,-15.24854 -35.9604,-17.28711 V 182.678 q 19.65185,-2.28321 36.2051,-17.61328 16.6347,-15.33008 20.2226,-39.05909 z m 3.5064,1.22315 q -4.4033,24.8706 -20.9566,40.20068 -16.47164,15.24854 -37.99899,18.5918 22.34278,3.75098 38.40679,18.91797 16.0639,15.08545 20.5488,40.0376 4.6479,-25.0337 20.7934,-40.11914 16.1455,-15.08545 38.1621,-18.83643 -20.7934,-3.01709 -37.4282,-18.021 -16.5532,-15.0039 -21.5273,-40.77148 z m 139.6074,23.00522 v -8.851 c 0,-7.849 0.167,-12.024 0.835,-17.535 h -22.545 c 0.668,6.179 1.002,10.521 1.002,17.368 v 9.018 h -23.547 c -7.014,0 -12.191,-0.167 -17.869,-0.835 0.668,6.179 0.835,10.855 0.835,16.867 v 93.52 c 0,6.179 -0.334,11.857 -1.002,17.702 h 22.545 v -7.181 h 99.532 v 7.181 h 22.712 c -0.668,-5.678 -1.002,-10.855 -1.002,-17.702 v -93.52 c 0,-5.845 0.167,-10.688 0.835,-16.867 -5.845,0.668 -10.855,0.835 -18.036,0.835 h -24.549 v -8.851 c 0,-7.181 0.334,-11.857 1.002,-17.535 h -22.545 c 0.668,5.344 0.835,10.02 0.835,17.368 v 9.018 z m 0,100.367 V 218.37 h 19.038 v 32.231 z m 0,-51.937 v -28.39 h 19.038 v 28.39 z m -20.708,-28.39 v 28.39 h -19.038 v -28.39 z m 0,48.096 v 32.231 h -19.038 V 218.37 Z m 60.454,32.231 V 218.37 h 20.04 v 32.231 z m 0,-51.937 v -28.39 h 20.04 v 28.39 z m 116.7291,-72.65837 h 7.0127 q 3.751,24.13672 20.4673,39.38526 16.7978,15.16699 36.1235,17.28711 v 6.84961 q -19.2441,1.95703 -36.1235,17.36865 -16.7979,15.33008 -20.4673,39.22217 h -7.0127 q -3.6694,-24.13672 -20.4673,-39.30371 -16.7978,-15.24854 -35.9604,-17.28711 V 182.678 q 19.6518,-2.28321 36.205,-17.61328 16.6348,-15.33008 20.2227,-39.05909 z m 3.5063,1.22315 q -4.4033,24.8706 -20.9565,40.20068 -16.4717,15.24854 -37.999,18.5918 22.3428,3.75098 38.4067,18.91797 16.064,15.08545 20.5488,40.0376 4.648,-25.0337 20.7935,-40.11914 16.1455,-15.08545 38.1621,-18.83643 -20.7934,-3.01709 -37.4282,-18.021 -16.5532,-15.0039 -21.5274,-40.77148 z m 91.0835,151.05594 c 16.7979,-20.3042 24.1368,-43.95166 24.1368,-73.0625 0,-29.43701 -7.3389,-53.00293 -24.1368,-73.14404 h -21.935 c 12.1499,14.18847 21.5273,45.25635 21.5273,73.0625 0,27.64306 -9.3774,58.79248 -21.5273,73.14404 z m 42.8916,-65.96826 H 1596.997 V 191.523 h -136.0953 z m 114.3233,64.9082 h 51.209 v -12.80224 h -51.209 z m -46.561,-130.46875 h 144.331 v -14.75927 h -144.331 z m 120.0312,104.78272 c 26.4199,0 43.2993,-16.96094 43.2993,-45.50098 v -0.16308 c 0,-28.29542 -17.2055,-45.3379 -43.3808,-45.3379 -26.0938,0 -43.2178,17.20557 -43.2178,45.3379 v 0.16308 c 0,28.4585 16.7163,45.50098 43.2993,45.50098 z m 0.081,-18.67334 c -11.7421,0 -19.1626,-9.70362 -19.1626,-26.82764 v -0.16308 c 0,-16.8794 7.502,-26.66456 18.9996,-26.66456 11.5791,0 19.1626,9.78516 19.1626,26.66456 v 0.16308 c 0,17.04248 -7.4205,26.82764 -18.9996,26.82764 z"/>
+    </g>
+  </defs>
+  <use href="#kaomoji-hero-shapes" fill="url(#kaomoji-hero-base-gradient)" filter="url(#kaomoji-hero-glow)"/>
+  <use href="#kaomoji-hero-shapes" fill="url(#kaomoji-hero-rainbow-gradient)" opacity="0.5"/>
 </svg>
