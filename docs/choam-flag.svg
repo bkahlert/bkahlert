@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%"
+     viewBox="0 0 900 600" style="border-radius:6px;overflow:hidden">
+  <title>choam-flag.svg</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <g>
+      <path d="M0 0 L900 0 L900 600 L0 600 Z" fill="#806200"/>
+      <path d="M270 300 C270 399.4 350.6 480 450 480 C549.4 480 630 399.4 630 300" fill="#000000"/>
+      <path d="M270 300 C270 200.6 350.6 120 450 120 C549.4 120 630 200.6 630 300" fill="#800000"/>
+    </g>
+  </g>
+</svg>
