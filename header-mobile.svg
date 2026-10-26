@@ -8,28 +8,10 @@
         }
       </style>
       <div class="container">
-        <table>
+        <table width="100%">
           <tr>
-            <td>
-              <a href="arrakis-desert/README.md">
-                <img src="arrakis-desert/svg/arrakis-desert-still.svg" width="100" alt="Arrakis Desert"/>
-              </a>
-            </td>
-            <td>
-              <a href="arrakis-desert-1984/README.md">
-                <img src="arrakis-desert-1984/svg/arrakis-desert-1984-still.svg" width="100"
-                     alt="Arrakis Desert (1984)"/>
-              </a>
-            </td>
-            <td>
-              <a href="arrakis-orbit/README.md">
-                <img src="arrakis-orbit/svg/arrakis-orbit-still.svg" width="100" alt="Arrakis Orbit"/>
-              </a>
-            </td>
-            <td>
-              <a href="arrakis-orbit-1984/README.md">
-                <img src="arrakis-orbit-1984/svg/arrakis-orbit-1984-still.svg" width="100" alt="Arrakis Orbit (1984)"/>
-              </a>
+            <td colspan="4" style="text-align: center; padding: 24px;">
+              <a href="https://github.com/bkahlert/arrakis">Dune-inspired Arrakis backgrounds</a>
             </td>
           </tr>
         </table>
