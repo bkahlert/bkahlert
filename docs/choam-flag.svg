@@ -1,12 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="600" viewBox="0 0 900 600">
   <defs>
-    <clipPath id="round"><rect x="0" y="0" width="900" height="600" rx="75"/></clipPath>
+    <clipPath id="clip-path-1">
+      <path d="M75 0 L825 0 C866.421 0 900 33.579 900 75 L900 525 C900 566.421 866.421 600 825 600 L75 600 C33.579 600 0 566.421 0 525 L0 75 C0 33.579 33.579 0 75 0 Z"/>
+    </clipPath>
   </defs>
-  <g clip-path="url(#round)">
-
-  <rect fill="#FAFA00" width="900" height="600"/>
-  <path fill="#000000" d="M270,300c0,99.4,80.6,180,180,180s180-80.6,180-180"/>
-  <path fill="#FA0000" d="M270,300c0-99.4,80.6-180,180-180s180,80.6,180,180"/>
+  <title>choam-flag.svg</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <g clip-path="url(#clip-path-1)">
+      <path d="M0 0 L900 0 L900 600 L0 600 Z" fill="#806200"/>
+      <path d="M270 300 C270 399.4 350.6 480 450 480 C549.4 480 630 399.4 630 300" fill="#000000"/>
+      <path d="M270 300 C270 200.6 350.6 120 450 120 C549.4 120 630 200.6 630 300" fill="#800000"/>
+    </g>
   </g>
 </svg>
